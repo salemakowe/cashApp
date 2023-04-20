@@ -36,21 +36,22 @@ flutter:
   fonts:
     - family: Montserrat
       fonts:
-        - asset: assets/fonts/montserrat/static/
+        - asset: assets/fonts/Montserrat/static/Montserrat-Regular.ttf
+          # weight: 800
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #
   #
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins/
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
   #
     - family: Sora
       fonts:
-        - asset: assets/fonts/Sora/static/
+        - asset: assets/fonts/Sora/static/Sora-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
