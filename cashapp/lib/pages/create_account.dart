@@ -1,5 +1,6 @@
 import 'package:cashapp/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class CreateAccoutPage extends StatefulWidget {
   const CreateAccoutPage({super.key});
@@ -9,6 +10,12 @@ class CreateAccoutPage extends StatefulWidget {
 }
 
 class _CreateAccoutPageState extends State<CreateAccoutPage> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController phone_number_controller = TextEditingController();
+  String initialCountry = "NG";
+  PhoneNumber number = PhoneNumber(isoCode: "NG");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,22 +44,49 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(24, 16, 24, 10),
         child: Column(
-          children: const [
-            Text(
+          children: [
+            const Text(
               "Cashwise would like to know your phone number",
               style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
-            SizedBox(height: 20),
-            Text(
-              "Kindly enter your phone number below as a verification code will be sent to it",
+            const SizedBox(height: 20),
+            const Text(
+              "Kindly enter your phone number below as a verification code will be sent to it.",
               style: TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 13,
                 fontWeight: FontWeight.normal,
               ),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: InternationalPhoneNumberInput(
+                    onInputChanged: (PhoneNumber number) {},
+                    onInputValidated: (bool value) {},
+                    selectorConfig: const SelectorConfig(
+                      selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                    ),
+                    ignoreBlank: false,
+                    autoValidateMode: AutovalidateMode.disabled,
+                    selectorTextStyle: const TextStyle(
+                      fontFamily: "Montserrat",
+                      color: Colors.black,
+                    ),
+                    initialValue: number,
+                    textFieldController: phone_number_controller,
+                    formatInput: true,
+                    keyboardType: const TextInputType.numberWithOptions(
+                        signed: true, decimal: true),
+                    inputBorder: OutlineInputBorder(),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
