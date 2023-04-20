@@ -48,9 +48,10 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
             Text(
               "Kindly enter your phone number below as a verification code will be sent to it",
               style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 13,
-                  fontWeight: FontWeight.normal),
+                fontFamily: 'Poppins',
+                fontSize: 13,
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ],
         ),
