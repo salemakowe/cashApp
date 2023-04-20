@@ -1,3 +1,4 @@
+import 'package:cashapp/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccoutPage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Create an account",
+          tCreateAccoutTitle,
           style: TextStyle(
             color: Colors.black,
             fontFamily: 'Montserrat',
