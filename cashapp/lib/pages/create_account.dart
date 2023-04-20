@@ -12,7 +12,7 @@ class CreateAccoutPage extends StatefulWidget {
 class _CreateAccoutPageState extends State<CreateAccoutPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  final TextEditingController phone_number_controller = TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
   String initialCountry = "NG";
   PhoneNumber number = PhoneNumber(isoCode: "NG");
 
@@ -61,7 +61,7 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                 fontWeight: FontWeight.normal,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -70,16 +70,19 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                     onInputChanged: (PhoneNumber number) {},
                     onInputValidated: (bool value) {},
                     selectorConfig: const SelectorConfig(
-                      selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                      selectorType: PhoneInputSelectorType.DIALOG,
+                      setSelectorButtonAsPrefixIcon: true,
+                      leadingPadding: 10.0,
                     ),
-                    ignoreBlank: false,
+                    ignoreBlank: true,
                     autoValidateMode: AutovalidateMode.disabled,
                     selectorTextStyle: const TextStyle(
                       fontFamily: "Montserrat",
                       color: Colors.black,
+                      fontWeight: FontWeight.w600,
                     ),
                     initialValue: number,
-                    textFieldController: phone_number_controller,
+                    textFieldController: phoneNumberController,
                     formatInput: true,
                     keyboardType: const TextInputType.numberWithOptions(
                         signed: true, decimal: true),
@@ -88,6 +91,15 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                 ),
               ],
             ),
+            const SizedBox(height: 5),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                children: [
+                  // RichText(text: text)
+                ],
+              ),
+            )
           ],
         ),
       ),
