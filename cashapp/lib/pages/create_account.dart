@@ -1,4 +1,5 @@
 import 'package:cashapp/constants/text_strings.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -44,6 +45,7 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(24, 16, 24, 10),
         child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Text(
               "Cashwise would like to know your phone number",
@@ -52,7 +54,7 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             const Text(
               "Kindly enter your phone number below as a verification code will be sent to it.",
               style: TextStyle(
@@ -61,11 +63,11 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                 fontWeight: FontWeight.normal,
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
+                Flexible(
                   child: InternationalPhoneNumberInput(
                     onInputChanged: (PhoneNumber number) {},
                     onInputValidated: (bool value) {},
@@ -86,18 +88,58 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                     formatInput: true,
                     keyboardType: const TextInputType.numberWithOptions(
                         signed: true, decimal: true),
-                    inputBorder: OutlineInputBorder(),
+                    inputBorder: const OutlineInputBorder(),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 5),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Row(
-                children: [
-                  // RichText(text: text)
-                ],
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                RichText(
+                  text: TextSpan(
+                    text: tAlreadyHaveAccount,
+                    style: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 12,
+                      color: Color(0xff6c727f),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: ' Login',
+                        style: const TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            print("pressed");
+                          },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.08,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xff12b669),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10))),
+                onPressed: () {},
+                child: const Text(
+                  tButton1,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 15,
+                  ),
+                ),
               ),
             )
           ],

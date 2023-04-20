@@ -9,7 +9,7 @@ const String tSubtitle = "Welcome back";
 //Sign Up
 const String tCreateAccoutTitle = "Create an account";
 const String tCreateAccountPassword = "Create a password";
-const String tAlreadyHaveAccount = "Already have an account";
+const String tAlreadyHaveAccount = "Already have an account?";
 const String tConfirmPhoneNumber = "Confirm phone Number";
 const String tMoreAboutYou = "We would like to know more about you";
 const String tButton1 = "Continue";
