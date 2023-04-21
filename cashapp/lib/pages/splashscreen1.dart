@@ -5,14 +5,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'onboarding.dart';
 
-class SplashScreenPage extends StatefulWidget {
-  const SplashScreenPage({super.key});
+class SplashScreenPage1 extends StatefulWidget {
+  const SplashScreenPage1({super.key});
 
   @override
-  State<SplashScreenPage> createState() => _SplashScreenPageState();
+  State<SplashScreenPage1> createState() => _SplashScreenPage1State();
 }
 
-class _SplashScreenPageState extends State<SplashScreenPage> {
+class _SplashScreenPage1State extends State<SplashScreenPage1> {
   @override
   void initState() {
     super.initState();

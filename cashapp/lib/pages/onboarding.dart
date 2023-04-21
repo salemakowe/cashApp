@@ -1,3 +1,4 @@
+import 'package:cashapp/pages/introscreen/onboarding1.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -8,8 +9,21 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
+  final PageController _pageviewcontroller = PageController();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView(
+            controller: _pageviewcontroller,
+            children: [
+              Onboarding1(),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
