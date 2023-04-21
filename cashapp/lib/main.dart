@@ -1,3 +1,4 @@
+import 'package:cashapp/pages/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/create_account.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'CashApp',
-      home: CreateAccoutPage(),
+      home: SplashScreenPage(),
       debugShowCheckedModeBanner: false,
     );
   }

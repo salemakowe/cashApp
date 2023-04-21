@@ -1,4 +1,5 @@
 import 'package:cashapp/constants/text_strings.dart';
+import 'package:cashapp/pages/otp_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -11,9 +12,9 @@ class CreateAccoutPage extends StatefulWidget {
 }
 
 class _CreateAccoutPageState extends State<CreateAccoutPage> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  final TextEditingController phoneNumberController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
   String initialCountry = "NG";
   PhoneNumber number = PhoneNumber(isoCode: "NG");
 
@@ -43,7 +44,7 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 16, 24, 10),
+        padding: const EdgeInsets.fromLTRB(24, 16, 24, 20),
         child: Column(
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -64,11 +65,13 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
               ),
             ),
             const SizedBox(height: 30),
+            //phone number
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Flexible(
                   child: InternationalPhoneNumberInput(
+                    key: _formKey,
                     onInputChanged: (PhoneNumber number) {},
                     onInputValidated: (bool value) {},
                     selectorConfig: const SelectorConfig(
@@ -84,16 +87,15 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                       fontWeight: FontWeight.w600,
                     ),
                     initialValue: number,
-                    textFieldController: phoneNumberController,
+                    textFieldController: _phoneNumberController,
                     formatInput: true,
-                    keyboardType: const TextInputType.numberWithOptions(
-                        signed: true, decimal: true),
+                    keyboardType: TextInputType.number,
                     inputBorder: const OutlineInputBorder(),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const Spacer(),
             Row(
               children: [
                 RichText(
@@ -129,10 +131,16 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
               height: MediaQuery.of(context).size.height * 0.08,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff12b669),
+                    backgroundColor: const Color(0xff12b669),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const OtpPage(),
+                    ),
+                  );
+                },
                 child: const Text(
                   tButton1,
                   style: TextStyle(
@@ -141,7 +149,17 @@ class _CreateAccoutPageState extends State<CreateAccoutPage> {
                   ),
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 30),
+            const Text(
+              textAlign: TextAlign.center,
+              tTermsPolicy,
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 12,
+                color: Color(0xff6c727f),
+              ),
+            ),
           ],
         ),
       ),

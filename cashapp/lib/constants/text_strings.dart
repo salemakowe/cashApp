@@ -41,3 +41,7 @@ const String tTransactionPinConfirmSubtitle =
     "Confirm your unique 4-digit Pin for you transaction";
 const String tTransactionPinSuccess =
     "Your trasaction pin has been created successfully";
+
+//Terms and Privacy Policy
+const String tTermsPolicy =
+    "By proceeding, you agree to Cashwise Terms of Service and Privacy Policy";
