@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 import '../splashscreen2.dart';
 
-class Onboarding1 extends StatefulWidget {
-  const Onboarding1({super.key});
+class Onboarding2 extends StatefulWidget {
+  const Onboarding2({super.key});
 
   @override
-  State<Onboarding1> createState() => _Onboarding1State();
+  State<Onboarding2> createState() => _Onboarding2State();
 }
 
-class _Onboarding1State extends State<Onboarding1> {
+class _Onboarding2State extends State<Onboarding2> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,7 +31,7 @@ class _Onboarding1State extends State<Onboarding1> {
                 children: [
                   RichText(
                     text: const TextSpan(
-                      text: "Take the first big step",
+                      text: "Make payments with",
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 20,
@@ -40,12 +40,39 @@ class _Onboarding1State extends State<Onboarding1> {
                       ),
                       children: [
                         TextSpan(
-                          text: ' to your financial future.',
+                          text: ' Virtual',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 20,
                             fontWeight: FontWeight.w700,
                             color: Kolors.textWhite,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' and',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Kolors.creditText,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' Physical',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Kolors.textWhite,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' cards',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Kolors.creditText,
                           ),
                         ),
                       ],
@@ -78,7 +105,7 @@ class _Onboarding1State extends State<Onboarding1> {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       // SizedBox(
                       //   width: MediaQuery.of(context).size.width * .4,
                       //   height: MediaQuery.of(context).size.height * .08,

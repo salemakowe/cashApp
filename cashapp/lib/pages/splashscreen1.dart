@@ -16,7 +16,7 @@ class _SplashScreenPage1State extends State<SplashScreenPage1> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: ((context) => const OnboardingPage()),

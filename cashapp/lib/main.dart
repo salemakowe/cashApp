@@ -1,3 +1,4 @@
+import 'package:cashapp/pages/onboarding.dart';
 import 'package:cashapp/pages/splashscreen1.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'CashApp',
-      home: SplashScreenPage1(),
+      // home: SplashScreenPage1(),
+      home: OnboardingPage(),
       debugShowCheckedModeBanner: false,
     );
   }
