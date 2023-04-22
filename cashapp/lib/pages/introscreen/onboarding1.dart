@@ -75,9 +75,13 @@ class _Onboarding1State extends State<Onboarding1> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff12b669),
+                            backgroundColor: Colors.transparent,
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            side: BorderSide(
+                              color: Kolors.creditText,
+                            )),
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
