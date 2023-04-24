@@ -24,6 +24,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return Scaffold(
       body: Stack(
         children: [
+          const DecoratedBox(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/imgs/background.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           //pages
           PageView(
             controller: _pageviewcontroller,
@@ -43,6 +51,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               count: 3,
               effect: const WormEffect(
                 dotColor: Kolors.textWhite,
+                activeDotColor: Kolors.creditText,
                 dotHeight: 5.0,
                 dotWidth: 50,
               ),
